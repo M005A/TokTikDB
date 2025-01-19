@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User.js');
+const Gif = require('../models/Gifs.js');
 
 // Get all users
 router.get('/', async (req, res) => {
     try {
-        const users = await User.find();
-        res.json(users);
+        const gifs = await Gif.find();
+        res.json(gifs);
     } catch (err) {
         res.status(500).send('Server error');
     }
@@ -14,12 +14,12 @@ router.get('/', async (req, res) => {
 
 // Add a user
 router.post('/', async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, data } = req.body;
 
     try {
-        const newUser = new User({ name, email, password });
-        await newUser.save();
-        res.status(201).json(newUser);
+        const newGif = new Gif({ name, data });
+        await newGif.save();
+        res.status(201).json(newGif);
     } catch (err) {
         //res.status(500).send('Server error');
     }
