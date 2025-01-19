@@ -16,10 +16,10 @@ router.get("/", async (req, res) => {
 
 // Add a user
 router.post("/", async (req, res) => {
-  const { name, gifData } = req.body;
+  const { name, gifData, title } = req.body;
 
   try {
-    const newGif = new Gif({ name, gifData });
+    const newGif = new Gif({ name, gifData, title, likes: 0, dislikes: 0 });
     await newGif.save();
     res.status(201).json(newGif);
   } catch (err) {
