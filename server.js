@@ -29,5 +29,8 @@ app.use('/api/gifs/index', gifIndexRoutes);
 const loginRoutes = require('./routes/loginCreds');
 app.use('/api/login', loginRoutes);
 
+const mostPopularGifs = require('./routes/mostPopularGifRoutes');
+app.use('/api/gifs/mostpopular', mostPopularGifs);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
