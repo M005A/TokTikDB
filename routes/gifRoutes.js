@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
   const { name, gifData, title } = req.body;
 
   try {
-    const newGif = new Gif({ name, gifData, title, likes: 0, dislikes: 0 });
+    const newGif = new Gif({ name, gifData, title, likes:0, dislikes:0});
     await newGif.save();
     res.status(201).json(newGif);
   } catch (err) {
