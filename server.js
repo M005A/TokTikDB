@@ -23,6 +23,9 @@ app.use('/api/users', userRoutes);
 const gifRoutes = require('./routes/gifRoutes');
 app.use('/api/gifs', gifRoutes);
 
+const gifIndexRoutes = require('./routes/gifIndexRoutes');
+app.use('/api/gifs/index', gifIndexRoutes);
+
 const loginRoutes = require('./routes/loginCreds');
 app.use('/api/login', loginRoutes);
 
