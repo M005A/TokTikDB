@@ -31,6 +31,8 @@ app.use('/api/login', loginRoutes);
 
 const mostPopularGifs = require('./routes/mostPopularGifRoutes');
 app.use('/api/gifs/mostpopular', mostPopularGifs);
+const updateGifData = require('./routes/updateGifData');
+app.use('/api/gifs/likedislike', updateGifData);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
